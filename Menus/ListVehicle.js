@@ -44,12 +44,13 @@ export default class ListVehicleScreen extends React.Component {
 
     render() {
         return (
-            <View style={styles.screenView}>
+            <View style={styles.listView}>
                 {
                     this.state.isLoading ?
                         <ActivityIndicator styles={styles.screenText} /> :
                         <FlatList
                             data={this.state.vehicle}
+                            keyExtractor={(item, index) => index.toString()}
                             renderItem={({item}) => (
                                 <Text style={styles.screenTitle} onPress={() => this.openSingleVehicle(item)}>{item.name}</Text>
                             )}

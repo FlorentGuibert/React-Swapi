@@ -19,7 +19,6 @@ export default class SinglePeopleScreen extends React.Component {
     componentDidMount() {
         let id = this.props.route.params.itemId;
         let url = 'https://swapi.dev/api/people/' + id;
-        document.title = this.props.route.params.itemName;
         call(url).then(
             reponse => {
                 const people = reponse.data;

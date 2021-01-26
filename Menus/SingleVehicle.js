@@ -19,7 +19,6 @@ export default class SingleVehicleScreen extends React.Component {
     componentDidMount() {
         let id = this.props.route.params.itemId;
         let url = 'https://swapi.dev/api/starships/' + id;
-        document.title = this.props.route.params.itemName;
         call(url).then(
             reponse => {
                 const vehicle = reponse.data;
